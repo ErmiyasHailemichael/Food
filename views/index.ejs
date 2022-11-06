@@ -7,6 +7,23 @@
     <title>index</title>
 </head>
 <body>
-    
+  <nav>
+    <a href="/recipes/new">
+     <button>Add recipes</button></a>
+  </nav>
+    <h1>Lists of Recipes</h1>
+    <ul>
+        <% recipes.forEach(recipes =>{ %>
+        <li>
+          <a href="/recipes/<%=recipes._id%>">
+              <%=recipes.name %></a>
+              <%=recipes.img %></a>
+              <form action="/recipes/<%= recipes._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+              </form>
+              <a href="/recipes/<%= recipes._id %> ">Edit</a>
+        </li>
+        <% }) %>
+      </ul>
 </body>
 </html>

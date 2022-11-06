@@ -26,6 +26,7 @@ app.use(methodOverride("_method"))
 
 // I        N       D       U       C       E       S
 // INDEX    NEW     DELETE  UPDATE  CREATE  EDIT    SHOW
+
 // INDEX
 app.get("/recipes",(req, res)=>{
     Recipes.find({},(error, allrecipes)=>{
@@ -42,7 +43,7 @@ app.get('/recipes/new', (req, res)=>{
 // CREATE ROUTE
 app.post("/recipes",(req, res)=>{
     Recipes.create(req.body,(error, Createdrecipes)=>{
-        res.send(Createdrecipes);
+    res.redirect('/recipes');
     })
 })
 
