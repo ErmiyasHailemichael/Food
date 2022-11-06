@@ -31,7 +31,7 @@ app.use(methodOverride("_method"))
 app.get("/recipes",(req, res)=>{
     Recipes.find({},(error, allrecipes)=>{
         res.render("index.ejs",{
-            recipes: allrecipes,
+        recipes: allrecipes,
         })
     })
 })
@@ -42,11 +42,18 @@ app.get('/recipes/new', (req, res)=>{
 })
 // CREATE ROUTE
 app.post("/recipes",(req, res)=>{
-    Recipes.create(req.body,(error, Createdrecipes)=>{
+    Recipes.create(req.body,(error, CreatedRecipes)=>{
     res.redirect('/recipes');
     })
 })
 
-
+// SHOW
+app.get("/recipes/:id", (req, res) => {
+    Journal.findById(req.params.id, (error, found) => {
+      // res.send(foundRecipes);
+      res.render("show.ejs", {recipes: foundRecipes})
+    });
+    // res.send("Works, SHOW")
+  });
 
 app.listen(PORT,()=>console.log(`Server is live on port :${PORT}`))
