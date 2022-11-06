@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const Recipes = require('./models/recipes')
 
 require('dotenv').config()
 
@@ -26,13 +27,19 @@ app.use(methodOverride("_method"))
 // I        N       D       U       C       E       S
 // INDEX    NEW     DELETE  UPDATE  CREATE  EDIT    SHOW
 
+// NEW
+app.get('/recipes/new', (req, res)=>{
+    res.send('New works')
+})
 // CREATE ROUTE
 app.post("/recipes",(req, res)=>{
-    // Recipes.create(req.body,(error, CreatedRecipes)=>{
-    //     res.send(req.body)
-    // })
+    Recipes.create(req.body,(error, CreatedRecipes)=>{
+        res.send(CreatedRecipes);
+    })
     // res.send(req.body)
     // res.send('sending...')
 })
+
+
 
 app.listen(PORT,()=>console.log(`Server is live on port :${PORT}`))
