@@ -40,6 +40,16 @@ app.get('/recipes/new', (req, res)=>{
     res.render('new.ejs')
     // res.send('New works')
 })
+
+// DELETE
+app.delete("/recipes/:id",(req, res)=>{
+    // res.send("Delete works")
+    Recipes.findByIdAndRemove(req.params.id, (error,deletedrecipes)=>{
+        console.log(deletedrecipes)
+        res.redirect('/recipes')
+    })
+
+})
 // CREATE ROUTE
 app.post("/recipes",(req, res)=>{
     Recipes.create(req.body,(error, CreatedRecipes)=>{
@@ -49,7 +59,7 @@ app.post("/recipes",(req, res)=>{
 
 // SHOW
 app.get("/recipes/:id", (req, res) => {
-    Journal.findById(req.params.id, (error, found) => {
+    Recipes.findById(req.params.id, (error, foundRecipes) => {
       // res.send(foundRecipes);
       res.render("show.ejs", {recipes: foundRecipes})
     });

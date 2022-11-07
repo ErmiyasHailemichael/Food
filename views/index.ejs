@@ -18,6 +18,7 @@
           <a href="/recipes/<%=recipes._id%>">
               <%=recipes.name %></a>
               <%=recipes.img %></a>
+              <!-- img tag -->
               <form action="/recipes/<%= recipes._id %>?_method=DELETE" method="POST">
                 <button type="submit">Delete</button>
               </form>

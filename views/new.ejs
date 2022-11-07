@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New</title>
-</head>
-<body>
-  <nav>
-    <a href="/recipes">
-     <button>Back</button></a>
-  </nav>
+  </head>
+  <body>
+    <nav>
+      <a href="/recipes"> <button>Back</button></a>
+    </nav>
     <h1>NEW | Add New Item</h1>
     <form action="/recipes" method="POST">
-      name: <input type="text" name="name"> <br>
-      description: <input type="text" name="description"> <br>
-      img: <input type="url" name="img"> <br>
-      ingridents: <input type="text" name="ingridents"> <br>
-      instruction: <input type="text" name="instruction"> <br>
-      <input type="submit" value="add recipe"/> 
+      name: <input type="text" name="name" /> <br />
+      description: <input type="text" name="description" /> <br />
+      img: <input type="url" name="img" /> <br />
+      ingredients: <input type="tex" name="ingredients" /> <br />
+      <!-- instructions: <input type="text" name="instructions"> <br> -->
+      instructions: <br />
+      <textarea name="instructions" id="" cols="30" rows="10"></textarea> <br />
+      <input type="submit" value="add recipe" />
     </form>
-</body>
+  </body>
 </html>
