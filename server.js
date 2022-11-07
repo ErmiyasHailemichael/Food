@@ -27,7 +27,7 @@ app.use(methodOverride("_method"));
 
 // I        N       D       U       C       E       S
 // INDEX    NEW     DELETE  UPDATE  CREATE  EDIT    SHOW
-
+// INDUCES
 // INDEX
 app.get("/recipes", (req, res) => {
   Recipes.find({}, (error, allrecipes) => {
