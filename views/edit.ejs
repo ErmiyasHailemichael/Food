@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit Book</h1>
-    <form>
+    <form action="/recipes/<%= recipes._id %>?_method=PUT" method="post">
       Name: <input type="text" name="name" value="<%=recipes.name%>" /><br />
       Description: <input type="text" name="description" value="<%=recipes.description%>" /><br />
       Img: <input type="url" name="img" value="<%= recipes.img %> "> <br />

@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const Recipes = require("./models/recipes");
+const { error } = require("console");
 
 require("dotenv").config();
 
@@ -49,6 +50,22 @@ app.delete("/recipes/:id", (req, res) => {
     res.redirect("/recipes");
   });
 });
+
+// UPDATE
+app.put('/recipes/:id', (req, res)=>{
+    // console.log(req.body)
+    Recipes.findByIdAndUpdate(
+        req.params.id, 
+        req.body,
+        {new:true},
+        (error,updatedRecipes)=>{
+        // console.log(error)
+        // console.log(updatedRecipes)
+        res.redirect(`/recipes/${req.params.id}`)
+    })
+    
+})
+
 // CREATE ROUTE
 app.post("/recipes", (req, res) => {
   Recipes.create(req.body, (error, CreatedRecipes) => {
