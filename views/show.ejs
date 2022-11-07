@@ -8,9 +8,20 @@
 </head>
 <body>
     <nav>
-        <a href="/recipes"> Back</a>
+        <a href="/recipes">
+            <button>Back</button>
+        </a>
     </nav>
-    <h1><%= recipes.name %> </h1>
-      <%= recipes.img %> <br/>
+    <h2><%=recipes.name %> </h2>
+    <img src=<%=recipes.img %>> <br>
+    <%=recipes.description %> <br>
+    <h3>INGREDIENTS</h3><%=recipes.ingredients %> <br>
+    <h3>INSTRUCTIONS</h3><%=recipes.instructions %> <br>
+    <form action="/recipes/<%= recipes._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    
+      <a href="/recipes/<%= recipes._id %>/edit ">
+        <button>Edit</button></a>
 </body>
 </html>
