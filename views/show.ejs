@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Show</title>
 </head>
 <body>
@@ -15,13 +16,23 @@
     <h2><%=recipes.name %> </h2>
     <img src=<%=recipes.img %>> <br>
     <%=recipes.description %> <br>
-    <h3>INGREDIENTS</h3><%=recipes.ingredients %> <br>
-    <h3>INSTRUCTIONS</h3><%=recipes.instructions %> <br>
+    <h3>INGREDIENTS</h3>
+    <ul>
+    <% recipes.ingredients.split(",").forEach((ingredient)=>{ %> 
+        <li><%= ingredient %> </li>
+        <% }) %> 
+    </ul>
+    <h3>INSTRUCTIONS</h3>
+    <ol>
+        <% recipes.instructions.split(".").forEach((instruction)=>{ %> 
+            <li><%= instruction %> </li>
+            <% }) %> 
+    </ol>
     <form action="/recipes/<%= recipes._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
+       <br> <button type="submit">Delete</button><br />
     </form>
     
       <a href="/recipes/<%= recipes._id %>/edit ">
-        <button>Edit</button></a>
+      <br>  <button>Edit</button></a>
 </body>
 </html>

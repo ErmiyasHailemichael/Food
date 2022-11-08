@@ -25,5 +25,7 @@ db.on("disconnected", () => console.log("mongo disconnected"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use('/recipes', recipesController)
+app.use(express.static('public'))
+
 
 app.listen(PORT, () => console.log(`Server is live on port :${PORT}`));
