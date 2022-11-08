@@ -1,4 +1,85 @@
-button {
+/* .topnav {
+    background-color: #b3cde0;
+    overflow: hidden;
+    text-align: center;
+}
+.container {
+    display: flex;
+    border: 3px solid #b3cde0;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.card {
+    list-style: none;
+   
+    padding: 20px;
+    background-color: #fef4f4;
+    color: #222;
+    border: 2px solid #B8E8FC;
+    margin: 5px;
+}
+.container .card {
+    width: 320px;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid #1746A2;
+    border-radius: 20px;
+    box-shadow: 0 0 7px #B4CDE6;
+}
+.container .card .img {
+    width: 330px;
+    margin: 40px auto;
+}
+
+.container .card .img {
+    width: 100%;
+}
+img {
+    height: 300px;
+    width: 300px;
+} */
+
+ul {
+    list-style: none; 
+  }
+
+  ul li::before {
+    content: "\2022";
+    color: rgb(65, 205, 140);
+    margin-left: -1em; 
+  }
+
+  ol {
+    list-style: none;
+    padding-left: 1rem;
+    counter-reset: circle-counter;
+  }
+  
+  ol li {
+    counter-increment: circle-counter;
+    margin-bottom: 0.25rem;
+  }
+  ol li:before {
+    content: counter(circle-counter);
+    background-color: rgb(65, 205, 140);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    color: black;
+    text-align: center;
+    margin-right: 0.5rem;
+    position: relative;
+    top: -2px;
+  }
+  ol li:last-child {
+    margin-bottom: 0;
+  }
+  button {
     background-color:rgb(65, 205, 140);
 	color: #0F1123;
 	text-decoration: none;

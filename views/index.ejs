@@ -8,19 +8,22 @@
     <title>index</title>
 </head>
 <body>
-  <nav>
+  <div class="topnav">
+    <h1>Lists of Recipes</h1>
     <a href="/recipes/new">
      <button>Add recipes</button></a>
-  </nav>
-    <h1>Lists of Recipes</h1>
-    <ul>
+  </div>
+    <div class="container">
         <% recipes.forEach(recipes =>{ %>
-        <li>
-          <a href="/recipes/<%=recipes._id%>">
-              <%=recipes.name %></a>
+            <div class="card">
+              <a href="/recipes/<%=recipes._id%>">
               <img src=<%=recipes.img %>> <br>
-        </li>
+              <div class="info">
+              <%=recipes.name %></a>
+            </div>
+          </div>
         <% }) %>
-      </ul>
+      </div>
+      
 </body>
 </html>

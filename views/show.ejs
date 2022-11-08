@@ -13,8 +13,13 @@
             <button>Back</button>
         </a>
     </nav>
-    <h2><%=recipes.name %> </h2>
+    <div class="blockname">
+        <h2><%=recipes.name %> </h2>
+    </div>
+
+    <div id="showimg">
     <img src=<%=recipes.img %>> <br>
+    </div>
     <%=recipes.description %> <br>
     <h3>INGREDIENTS</h3>
     <ul>
